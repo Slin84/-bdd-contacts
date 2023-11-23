@@ -2,16 +2,12 @@ create database if not exists BDD;
 show databases;
 use BDD;
 drop table if exists contacts;
-create table if not exists contacts(ID int, Nom varchar(70),
-Prenom varchar(70),
-Date_de_naissance date,
-Sexe ENUM('Homme','Femme','Autre'),
-Adresse text,
-Cp varchar(10),
-Ville varchar(70),
-Pays_Iso3 varchar(3));
+create table if not exists contacts(ID int, Nom varchar(70), Prenom varchar(70), Date_de_naissance date, Sexe ENUM('Homme','Femme','Autre'), Adresse text, Cp varchar(10), Ville varchar(70), Pays_Iso_3 varchar(3));
 drop table if exists telephone;
 create table if not exists telephone(ID int, ID_contact int, numero varchar(50), type ENUM('Portable','Fixe'));
+drop table if exists pays;
+create table if not exists pays(iso_3 varchar(3), nom varchar(70), iso_2 varchar(2), nationalite varchar(50));
 Show tables;
 Describe contacts;
 Describe telephone;
+Describe pays;
